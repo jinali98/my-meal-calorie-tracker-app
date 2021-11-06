@@ -25,6 +25,8 @@ receipe serach api
 https://developer.edamam.com/edamam-docs-recipe-api
 
 <!-- search receipes balanced and alchohol free receipes by meal type lunch, dinner, breakfast  -->
+<!-- add different colors to receipe cards according to the meal type -->
+<!-- by clicking each receipe card user can view the full receipe -->
 <!-- allow to add receipes to receipe book - store in the local storage -->
 
 https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=7200a6f3&app_key=3324206cfcb6ba02b27f9729b3209459&diet=balanced&health=alcohol-free&mealType=Breakfast&imageSize=REGULAR
