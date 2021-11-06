@@ -2,6 +2,7 @@ import React from "react";
 import { TOOL_TYPES } from "../../constants";
 import LandingToolCard from "../landing-tool-card/landing-tool-card.component";
 import {
+  LandingToolHeading,
   LandingToolsContainer,
   ToolTypesContainer,
 } from "./landing-tool.styles";
@@ -9,7 +10,7 @@ import {
 const LandingTools = () => {
   return (
     <LandingToolsContainer>
-      <h1>Food Tools</h1>
+      <LandingToolHeading>MyMeal Tools</LandingToolHeading>
       <ToolTypesContainer>
         {TOOL_TYPES.map((each) => (
           <LandingToolCard key={each.title} tool={each} />

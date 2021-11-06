@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import {
   Button,
   CardContainer,
@@ -8,17 +9,20 @@ import {
   Value,
 } from "./landing-tool-card.styles";
 
-const LandingToolCard = ({ tool: { title, value, imageUrl } }) => {
+const LandingToolCard = ({
+  tool: { title, value, imageUrl, button, url },
+  history,
+}) => {
   return (
     <CardContainer>
       <ImageContainer style={{ backgroundImage: `url(${imageUrl})` }} />
       <DetailContainer>
         <Title>{title}</Title>
         <Value>{value}</Value>
-        <Button>Meal Diary</Button>
+        <Button onClick={() => history.push(url)}>{button}</Button>
       </DetailContainer>
     </CardContainer>
   );
 };
 
-export default LandingToolCard;
+export default withRouter(LandingToolCard);

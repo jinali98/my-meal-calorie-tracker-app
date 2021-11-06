@@ -3,21 +3,29 @@ export const TOOL_TYPES = [
     title: "Meal Diary",
     value: "Track your daily calorie intake",
     imageUrl: "https://i.ibb.co/Xk3zfRJ/healthy.jpg",
+    button: "View Meal Diary",
+    url: "/meal-diary",
   },
   {
     title: "Healthy Receipes",
     value: "Find healthy receipes",
     imageUrl: "https://i.ibb.co/M7DKMZz/cooking.jpg",
+    button: "View Healthy Receipes",
+    url: "/find-receipe",
   },
   {
     title: "Calorie Counter",
-    value: "Learn about calorie content of various food items",
+    value: "Learn calorie content of food items",
     imageUrl: "https://i.ibb.co/sW0J54V/barbecue.jpg",
+    button: "View Calorie Counter",
+    url: "/find-calorie-amount",
   },
   {
     title: "Cook Book",
     value: "Collect your favourite receipes",
     imageUrl: "https://i.ibb.co/Jd0vrdH/tasting.jpg",
+    button: "View Cook Book",
+    url: "/cook-book",
   },
 ];
 

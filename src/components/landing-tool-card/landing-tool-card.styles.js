@@ -43,5 +43,5 @@ export const Title = styled.p`
 export const Value = styled.p`
   font-size: 18px;
   color: ${color_1};
-  font-weight: 400;
+  font-weight: 300;
 `;
