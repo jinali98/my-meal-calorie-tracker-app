@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "../custom-button/custom-button.component";
 
 import {
   ContentWrapper,
@@ -19,7 +20,9 @@ const LandingContent = () => {
           healthy receipes,collect your favourite receipes, and learn about
           calorie content of various food items.
         </LandingPara>
-        <button>Get Started</button>
+        <CustomButton size="large" color="secondary" variant="contained">
+          Get Started
+        </CustomButton>
       </ContentWrapper>
       <ImageContainer>
         <Image />

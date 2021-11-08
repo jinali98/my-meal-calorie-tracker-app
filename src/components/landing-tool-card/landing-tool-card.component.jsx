@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import CustomButton from "../custom-button/custom-button.component";
 import {
   Button,
   CardContainer,
@@ -19,7 +20,14 @@ const LandingToolCard = ({
       <DetailContainer>
         <Title>{title}</Title>
         <Value>{value}</Value>
-        <Button onClick={() => history.push(url)}>{button}</Button>
+        <CustomButton
+          size="small"
+          color="primary"
+          variant="contained"
+          onClick={() => history.push(url)}
+        >
+          {button}
+        </CustomButton>
       </DetailContainer>
     </CardContainer>
   );
