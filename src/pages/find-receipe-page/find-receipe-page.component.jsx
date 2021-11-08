@@ -5,7 +5,7 @@ import {
   ReceipePageContainer,
   useFindReceipeTitle,
 } from "./find-receipe-form.styles";
-
+import ReceipeCardContainer from "../../components/receipe-cards-container/receipe-card-container.component.jsx";
 const FindReceipePage = () => {
   const classes = useFindReceipeTitle();
   return (
@@ -23,13 +23,7 @@ const FindReceipePage = () => {
         are good to go!!!
       </CustomTitle>
       <FindReceipeForm />
-
-      <div>
-        <img src="" alt="" />
-        <p>receipe.label</p>
-        <p>calories</p>
-        <p>total weight</p>
-      </div>
+      <ReceipeCardContainer />
     </ReceipePageContainer>
   );
 };
