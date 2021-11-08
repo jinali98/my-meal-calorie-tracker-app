@@ -1,13 +1,11 @@
 import React from "react";
+import FindReceipeForm from "../../components/find-receipe-form/find-receipe-form.component";
+import { ReceipePageContainer } from "./find-receipe-form.styles";
 
 const FindReceipePage = () => {
   return (
-    <div>
-      <form>
-        <input placeholder="meal name" />
-        <input placeholder="meal-type" />
-        <button>search</button>
-      </form>
+    <ReceipePageContainer>
+      <FindReceipeForm />
 
       <div>
         <img src="" alt="" />
@@ -15,7 +13,7 @@ const FindReceipePage = () => {
         <p>calories</p>
         <p>total weight</p>
       </div>
-    </div>
+    </ReceipePageContainer>
   );
 };
 
