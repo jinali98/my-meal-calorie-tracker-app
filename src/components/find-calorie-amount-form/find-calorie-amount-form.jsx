@@ -44,18 +44,18 @@ const FindCalorieAmountForm = () => {
       />
       <SearchForm
         className={classes.amountField}
-        id="amount"
+        id="quantity"
         type="number"
-        label="Amount"
+        label="Quantity"
         variant="outlined"
         color="secondary"
         value={inputValues.amount}
         onChange={valueOnChangeHandler("amount")}
         InputProps={
-          ({
+          ({ inputProps: { min: 1 } },
+          {
             endAdornment: <InputAdornment position="end">g</InputAdornment>,
-          },
-          { inputProps: { min: 1 } })
+          })
         }
       />
       <CustomIconButton

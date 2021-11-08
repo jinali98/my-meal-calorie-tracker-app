@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import CustomButton from "../custom-button/custom-button.component";
 import {
-  Button,
   CardContainer,
   DetailContainer,
   ImageContainer,
