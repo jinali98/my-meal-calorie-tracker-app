@@ -1,27 +1,25 @@
-import { Button } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import React from "react";
 
-const CustomButton = ({
+const CustomIconButton = ({
   children,
   type,
   variant,
   color,
-  endIcon,
-  size,
+  ariaLabel,
   ...otherProps
 }) => {
   return (
-    <Button
+    <IconButton
+      aria-label={ariaLabel}
       variant={variant}
       color={color}
-      endIcon={endIcon}
       type={type}
       {...otherProps}
-      size={size}
     >
       {children}
-    </Button>
+    </IconButton>
   );
 };
 
-export default CustomButton;
+export default CustomIconButton;
