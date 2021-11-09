@@ -1,13 +1,13 @@
 import React from "react";
 import DiaryModalContainer from "../../components/diary-modal-container/diary-modal-container";
-
+import { MealDiaryPageContainer } from "./meal-diary-page.styles";
 const MealDiaryPage = () => {
   return (
-    <div>
+    <MealDiaryPageContainer>
       <DiaryModalContainer />
 
       <div>cards</div>
-    </div>
+    </MealDiaryPageContainer>
   );
 };
 

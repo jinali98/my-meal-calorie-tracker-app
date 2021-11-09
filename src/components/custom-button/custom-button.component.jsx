@@ -8,6 +8,7 @@ const CustomButton = ({
   color,
   endIcon,
   size,
+  onClick,
   ...otherProps
 }) => {
   return (
@@ -18,6 +19,7 @@ const CustomButton = ({
       type={type}
       {...otherProps}
       size={size}
+      onClick={onClick}
     >
       {children}
     </Button>

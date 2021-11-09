@@ -6,7 +6,7 @@ import { toggleModalButton } from "../../store/meal-diary/mealdiary.actions";
 import { connect } from "react-redux";
 const DiaryModalContainer = ({ toggleModal }) => {
   return (
-    <div>
+    <>
       <CustomButton
         onClick={toggleModal}
         ariaLabel="add-button"
@@ -17,7 +17,7 @@ const DiaryModalContainer = ({ toggleModal }) => {
         <AddRoundedIcon fontSize="large" />
       </CustomButton>
       <DiaryModal />
-    </div>
+    </>
   );
 };
 

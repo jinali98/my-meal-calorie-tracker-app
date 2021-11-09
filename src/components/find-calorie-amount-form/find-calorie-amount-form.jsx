@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 
-import { SearchForm } from "../input-fields/input-fields.component";
+import { InputField } from "../input-fields/input-fields.component";
 import SearchIcon from "@material-ui/icons/Search";
 import {
   CalorieCOunterForm,
@@ -31,7 +31,7 @@ const FindCalorieAmountForm = () => {
 
   return (
     <CalorieCOunterForm onSubmit={formOnSubmitHandler}>
-      <SearchForm
+      <InputField
         autoFocus
         className={classes.searchField}
         id="receipe-search"
@@ -42,7 +42,7 @@ const FindCalorieAmountForm = () => {
         value={inputValues.foodName}
         onChange={valueOnChangeHandler("foodName")}
       />
-      <SearchForm
+      <InputField
         className={classes.amountField}
         id="quantity"
         type="number"

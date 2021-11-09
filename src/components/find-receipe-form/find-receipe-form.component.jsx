@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   MealTypesForm,
-  SearchForm,
+  InputField,
 } from "../input-fields/input-fields.component";
 
 import SearchIcon from "@material-ui/icons/Search";
@@ -31,7 +31,7 @@ const FindReceipeForm = () => {
 
   return (
     <Form onSubmit={formOnSubmitHandler}>
-      <SearchForm
+      <InputField
         autoFocus
         className={classes.searchField}
         id="receipe-search"

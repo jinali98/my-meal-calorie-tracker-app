@@ -3,33 +3,7 @@ import { MenuItem, TextField } from "@material-ui/core";
 import { convertToArray } from "../../utils/convertToArray";
 import { mealTypes } from "../../constants/mealTypes";
 
-export const DateForm = ({ type, placeholder, value, ...otherprops }) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      {...otherprops}
-    />
-  );
-};
-export const CalorieTypeForm = ({
-  type,
-  placeholder,
-  value,
-  ...otherprops
-}) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      {...otherprops}
-    />
-  );
-};
-
-export const SearchForm = ({
+export const InputField = ({
   label,
   search,
   type,
@@ -40,6 +14,7 @@ export const SearchForm = ({
   color,
   className,
   InputProps,
+  min,
   ...otherProps
 }) => {
   return (
@@ -54,7 +29,7 @@ export const SearchForm = ({
       onChange={onChange}
       value={value}
       InputProps={InputProps}
-      min="1"
+      min={min}
       {...otherProps}
     />
   );
