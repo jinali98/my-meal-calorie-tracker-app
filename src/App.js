@@ -11,6 +11,19 @@ import MealDiaryPage from "./pages/meal-diary-page/meal-diary-page.component";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const mainTheme = createTheme({
+  typography: {
+    fontFamily: "Source Sans Pro",
+  },
+  props: {
+    MuiTypography: {
+      variantMapping: {
+        h1: "h1",
+        h2: "h2",
+        subtitle1: "p",
+        subtitle2: "p",
+      },
+    },
+  },
   palette: {
     primary: {
       main: "#206A5D",
