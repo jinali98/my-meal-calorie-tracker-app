@@ -4,14 +4,12 @@ import MealDiaryCard from "../../cards/mealDiary-card/mealDiary-card.component";
 import { Wrapper } from "./meal-diary-card-container.styles";
 import { selectMealCards } from "../../../store/meal-diary/mealdiary.selectors.js";
 import { connect } from "react-redux";
-const MealDiaryCardContainer = () => {
+const MealDiaryCardContainer = ({ mealCards }) => {
   return (
     <Wrapper>
-      <MealDiaryCard />
-      <MealDiaryCard />
-      <MealDiaryCard />
-      <MealDiaryCard />
-      <MealDiaryCard />
+      {mealCards.map((card) => (
+        <MealDiaryCard key={card.id} card={card} />
+      ))}
     </Wrapper>
   );
 };

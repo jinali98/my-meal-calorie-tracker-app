@@ -16,10 +16,18 @@ export const addMealCardsUtil = (list, newCard) => {
   );
   const mealReviews = mealReview(calPercentage);
 
-  const { carboReview, fatReview, proteinReview } = mealReviews;
+  const {
+    carboReview,
+    fatReview,
+    proteinReview,
+    carboMood,
+    fatMood,
+    proteinMood,
+  } = mealReviews;
 
   return [
     {
+      id: `${date}${mealType}`,
       date,
       mealType,
       totalCal,
@@ -29,18 +37,21 @@ export const addMealCardsUtil = (list, newCard) => {
           grams: carbo,
           percentage: calPercentage[0].quantity,
           review: carboReview,
+          mood: carboMood,
         },
         {
           name: "Protein",
           grams: protein,
           percentage: calPercentage[1].quantity,
           review: proteinReview,
+          mood: proteinMood,
         },
         {
           name: "Fat",
           grams: fat,
           percentage: calPercentage[2].quantity,
           review: fatReview,
+          mood: fatMood,
         },
       ],
     },
