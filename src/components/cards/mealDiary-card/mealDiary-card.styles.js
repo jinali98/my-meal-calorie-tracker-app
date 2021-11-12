@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "styled-components";
-import { color_3 } from "../../../globalStyles";
+import { color_3, color_4 } from "../../../globalStyles";
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -17,9 +17,16 @@ export const QuantityWrapper = styled.div`
 `;
 export const ResultWrapper = styled.div`
   text-align: center;
-  background-color: ${color_3};
+
+  /* background-color: ${color_3}; */
   padding: 10px;
   border-radius: 8px;
 `;
 
-export const useStyles = makeStyles({});
+export const useStyles = makeStyles({
+  mealType: {
+    padding: "2px 8px",
+    borderRadius: "4px",
+    color: `${color_4}`,
+  },
+});

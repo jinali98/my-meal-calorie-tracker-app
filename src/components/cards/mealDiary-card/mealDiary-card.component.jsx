@@ -1,5 +1,6 @@
 import { CardActions, CardContent } from "@material-ui/core";
 import React from "react";
+import { mealTypes } from "../../../constants/mealTypes";
 import { DeleteButton, UpdateButton } from "../../buttons/buttons.component";
 import CustomCard from "../../custom-card/custom.card.component";
 import CustomTitle from "../../custom-title/custom-title.component";
@@ -19,7 +20,11 @@ const MealDiaryCard = () => {
           <CustomTitle color="primary" variant="h6">
             01/02/2021
           </CustomTitle>
-          <CustomTitle color="primary" variant="h6">
+          <CustomTitle
+            className={classess.mealType}
+            variant="h6"
+            style={{ backgroundColor: `${mealTypes.Breakfast.color}` }}
+          >
             BREAKFAST
           </CustomTitle>
         </HeaderWrapper>

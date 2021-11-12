@@ -8,8 +8,10 @@ import {
   useStylesForCalorieCounterForm,
 } from "./find-calorie-amount-form.styles";
 import { InputAdornment } from "@material-ui/core";
+import { fetchCalorieDataAsync } from "../../store/calorie-counter/calorie-counter.actions";
+import { connect } from "react-redux";
 
-const FindCalorieAmountForm = () => {
+const FindCalorieAmountForm = ({ fetchCalorieData }) => {
   const [inputValues, setInputvalues] = useState({
     foodName: "",
     amount: "1",
@@ -21,7 +23,9 @@ const FindCalorieAmountForm = () => {
 
   const formOnSubmitHandler = (e) => {
     e.preventDefault();
+    const { foodName, amount } = inputValues;
     console.log(inputValues);
+    fetchCalorieData(foodName, amount);
     setInputvalues({
       foodName: "",
       amount: "1",
@@ -70,4 +74,9 @@ const FindCalorieAmountForm = () => {
   );
 };
 
-export default FindCalorieAmountForm;
+const mapDispatchToProps = (dispatch) => ({
+  fetchCalorieData: (fooditem, quantity) =>
+    dispatch(fetchCalorieDataAsync({ fooditem, quantity })),
+});
+
+export default connect(null, mapDispatchToProps)(FindCalorieAmountForm);

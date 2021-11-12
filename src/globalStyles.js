@@ -14,6 +14,7 @@ body{
     line-height: 1.5;
     font-weight: 400;
     overflow-x: hidden;
+    background-color: #f8f9fa;
 }
 html{
     scroll-behavior: smooth;
