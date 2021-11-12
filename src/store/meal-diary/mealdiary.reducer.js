@@ -1,7 +1,9 @@
 import { mealDiaryActionTypes } from "./mealdiary.types";
+import { addMealCardsUtil } from "./mealdiary.utils";
 
 const INITIAL_STATE = {
   modalOpen: false,
+  mealCards: [],
 };
 
 export const mealDiaryReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +12,11 @@ export const mealDiaryReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         modalOpen: !state.modalOpen,
+      };
+    case mealDiaryActionTypes.ADD_MEAL_CARD:
+      return {
+        ...state,
+        mealCards: addMealCardsUtil(state.mealCards, action.payload),
       };
 
     default:

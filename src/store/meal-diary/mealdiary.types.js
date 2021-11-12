@@ -1,3 +1,4 @@
 export const mealDiaryActionTypes = {
   TOGGLE_MODAL_OPEN_BUTTON: "TOGGLE_MODAL_OPEN_BUTTON",
+  ADD_MEAL_CARD: "ADD_MEAL_CARD",
 };

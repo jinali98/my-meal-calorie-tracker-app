@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
-import { toggleModalButton } from "../../store/meal-diary/mealdiary.actions";
+import {
+  addMealCard,
+  toggleModalButton,
+} from "../../store/meal-diary/mealdiary.actions";
 import {
   CarbohydrateField,
   CloseButton,
@@ -12,26 +15,63 @@ import {
 } from "../mealdiary-form-fields/mealdiary-form-fields.component";
 import { ButtonContainer, Form, FormContainer } from "./mealDiary-form.styles";
 
-const MealDiaryForm = ({ closeWindow }) => {
+const MealDiaryForm = ({ closeWindow, addMealCard }) => {
+  const [userInput, setUserInput] = useState({
+    date: "",
+    mealType: "",
+    carbo: "",
+    protein: "",
+    fat: "",
+  });
+
+  const { date, mealType, carbo, protein, fat } = userInput;
+
+  const inputChangeHandler = (props) => (e) => {
+    setUserInput({ ...userInput, [props]: e.target.value });
+  };
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    addMealCard(userInput);
+    setUserInput({
+      date: "",
+      mealType: "",
+      carbo: "",
+      protein: "",
+      fat: "",
+    });
+  };
+
   return (
     <FormContainer>
-      <Form>
-        <DateField />
-        <MealTypeField />
-        <CarbohydrateField />
-        <ProteinField />
-        <FatField />
+      <Form onSubmit={formSubmitHandler}>
+        <DateField onChange={inputChangeHandler("date")} value={date} />
+        <MealTypeField
+          onChange={inputChangeHandler("mealType")}
+          value={mealType}
+        />
+        <CarbohydrateField
+          onChange={inputChangeHandler("carbo")}
+          value={carbo}
+        />
+        <ProteinField
+          onChange={inputChangeHandler("protein")}
+          value={protein}
+        />
+        <FatField onChange={inputChangeHandler("fat")} value={fat} />
+
+        <ButtonContainer>
+          <SubmitButton type="submit" />
+          <CloseButton onClick={closeWindow} />
+        </ButtonContainer>
       </Form>
-      <ButtonContainer>
-        <SubmitButton />
-        <CloseButton onClick={closeWindow} />
-      </ButtonContainer>
     </FormContainer>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
   closeWindow: () => dispatch(toggleModalButton()),
+  addMealCard: (item) => dispatch(addMealCard(item)),
 });
 
 export default connect(null, mapDispatchToProps)(MealDiaryForm);

@@ -6,3 +6,7 @@ export const selectIsModalOpen = createSelector(
   [selectMealDiary],
   (mealDiary) => mealDiary.modalOpen
 );
+export const selectMealCards = createSelector(
+  [selectMealDiary],
+  (mealDiary) => mealDiary.mealCards
+);

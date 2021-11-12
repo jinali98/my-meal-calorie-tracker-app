@@ -23,7 +23,8 @@ export const fetchCalorieDataAsync = ({ fooditem, quantity }) => {
       console.log(response);
       dispatch(successFetchingData(response));
     } catch (error) {
-      dispatch(failFetchingData(error));
+      console.log(error);
+      dispatch(failFetchingData(error.message));
     }
   };
 };
