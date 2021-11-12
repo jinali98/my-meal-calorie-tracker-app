@@ -51,7 +51,6 @@ const MealDiaryCard = ({ card }) => {
           </CustomTitle>
           <List>
             {nutrients.map((each) => (
-              // <CustomTitle variant="subtitle1">{each.review}</CustomTitle>
               <ListItem>
                 <ListItemAvatar>
                   {each.mood === "good" && (
@@ -78,4 +77,3 @@ const MealDiaryCard = ({ card }) => {
 };
 
 export default MealDiaryCard;
-//protein amount is low.
