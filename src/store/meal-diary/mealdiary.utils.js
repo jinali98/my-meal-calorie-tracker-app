@@ -58,3 +58,11 @@ export const addMealCardsUtil = (list, newCard) => {
     ...list,
   ];
 };
+
+export const removeMealCardUtil = (list, card) => {
+  const existingItem = list.find((each) => each.id === card.id);
+
+  if (!existingItem) return;
+
+  return list.filter((each) => each.id !== existingItem.id);
+};

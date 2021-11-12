@@ -7,6 +7,7 @@ const CustomIconButton = ({
   variant,
   color,
   ariaLabel,
+  onClick,
   ...otherProps
 }) => {
   return (
@@ -15,6 +16,7 @@ const CustomIconButton = ({
       variant={variant}
       color={color}
       type={type}
+      onClick={onClick}
       {...otherProps}
     >
       {children}

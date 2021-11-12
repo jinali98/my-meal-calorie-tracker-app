@@ -4,6 +4,7 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
 import React from "react";
@@ -19,7 +20,10 @@ import {
 } from "./mealDiary-card.styles";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
-const MealDiaryCard = ({ card }) => {
+import { removeMealCard } from "../../../store/meal-diary/mealdiary.actions";
+import { connect } from "react-redux";
+
+const MealDiaryCard = ({ card, removeCard }) => {
   const { date, mealType, totalCal, nutrients } = card;
 
   const classess = useStyles();
@@ -40,7 +44,7 @@ const MealDiaryCard = ({ card }) => {
         </HeaderWrapper>
         <QuantityWrapper>
           {nutrients.map((each) => (
-            <CustomTitle variant="subtitle1">
+            <CustomTitle key={Math.random()} variant="subtitle1">
               {`${each.name} : ${each.grams}g : ${each.percentage}%`}
             </CustomTitle>
           ))}
@@ -51,8 +55,8 @@ const MealDiaryCard = ({ card }) => {
           </CustomTitle>
           <List>
             {nutrients.map((each) => (
-              <ListItem>
-                <ListItemAvatar>
+              <ListItem key={Math.random()}>
+                <ListItemIcon>
                   {each.mood === "good" && (
                     <SentimentVerySatisfiedIcon className={classess.goodIcon} />
                   )}
@@ -61,7 +65,7 @@ const MealDiaryCard = ({ card }) => {
                       className={classess.badIcon}
                     />
                   )}
-                </ListItemAvatar>
+                </ListItemIcon>
                 <ListItemText primary={each.review} />
               </ListItem>
             ))}
@@ -70,10 +74,13 @@ const MealDiaryCard = ({ card }) => {
       </CardContent>
       <CardActions>
         <UpdateButton />
-        <DeleteButton />
+        <DeleteButton onClick={() => removeCard(card)} />
       </CardActions>
     </CustomCard>
   );
 };
 
-export default MealDiaryCard;
+const mapDispatchToProps = (dispatch) => ({
+  removeCard: (item) => dispatch(removeMealCard(item)),
+});
+export default connect(null, mapDispatchToProps)(MealDiaryCard);
