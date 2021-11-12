@@ -1,3 +1,4 @@
+import { red, yellow } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "styled-components";
 import { color_3, color_4 } from "../../../globalStyles";
@@ -28,5 +29,11 @@ export const useStyles = makeStyles({
     padding: "2px 8px",
     borderRadius: "4px",
     color: `${color_4}`,
+  },
+  goodIcon: {
+    color: yellow[600],
+  },
+  badIcon: {
+    color: red[700],
   },
 });

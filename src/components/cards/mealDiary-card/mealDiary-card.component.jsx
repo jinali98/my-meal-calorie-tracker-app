@@ -54,8 +54,14 @@ const MealDiaryCard = ({ card }) => {
               // <CustomTitle variant="subtitle1">{each.review}</CustomTitle>
               <ListItem>
                 <ListItemAvatar>
-                  {each.mood === "good" && <SentimentVerySatisfiedIcon />}
-                  {each.mood === "bad" && <SentimentVeryDissatisfiedIcon />}
+                  {each.mood === "good" && (
+                    <SentimentVerySatisfiedIcon className={classess.goodIcon} />
+                  )}
+                  {each.mood === "bad" && (
+                    <SentimentVeryDissatisfiedIcon
+                      className={classess.badIcon}
+                    />
+                  )}
                 </ListItemAvatar>
                 <ListItemText primary={each.review} />
               </ListItem>
