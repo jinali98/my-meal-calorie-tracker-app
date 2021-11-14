@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
+import useTextFieldValidate from "../../effects/useTextFieldValidate";
 import {
   addMealCard,
   toggleModalButton,
@@ -16,49 +17,101 @@ import {
 import { ButtonContainer, Form, FormContainer } from "./mealDiary-form.styles";
 
 const MealDiaryForm = ({ closeWindow, addMealCard }) => {
-  const [userInput, setUserInput] = useState({
-    date: "",
-    mealType: "",
-    carbo: "",
-    protein: "",
-    fat: "",
-  });
-
-  const { date, mealType, carbo, protein, fat } = userInput;
-
-  const inputChangeHandler = (props) => (e) => {
-    setUserInput({ ...userInput, [props]: e.target.value });
-  };
+  const {
+    value: date,
+    reset: dateReset,
+    hasError: dateHasError,
+    valueChangeHandler: dateChangeHandler,
+    isValid: dateIsValid,
+    onBlur: dateBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: mealType,
+    reset: mealTypeReset,
+    hasError: mealTypeHasError,
+    valueChangeHandler: mealTypeChangeHandler,
+    isValid: mealTypeIsValid,
+    onBlur: mealTypeBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: carbo,
+    reset: carboReset,
+    hasError: carboHasError,
+    valueChangeHandler: carboChangeHandler,
+    isValid: carboIsValid,
+    onBlur: carboBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: protein,
+    reset: proteinReset,
+    hasError: proteinHasError,
+    valueChangeHandler: proteinChangeHandler,
+    isValid: proteinIsValid,
+    onBlur: proteinBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: fat,
+    reset: fatReset,
+    hasError: fatHasError,
+    valueChangeHandler: fatChangeHandler,
+    isValid: fatIsValid,
+    onBlur: fatBlurHandler,
+  } = useTextFieldValidate();
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    addMealCard(userInput);
-    setUserInput({
-      date: "",
-      mealType: "",
-      carbo: "",
-      protein: "",
-      fat: "",
-    });
+
+    if (
+      !dateIsValid ||
+      !mealTypeIsValid ||
+      !carboIsValid ||
+      !proteinIsValid ||
+      !fatIsValid
+    )
+      return;
+
+    addMealCard({ date, mealType, protein, fat, carbo });
+
+    dateReset();
+    mealTypeReset();
+    proteinReset();
+    fatReset();
+    carboReset();
   };
 
   return (
     <FormContainer>
       <Form onSubmit={formSubmitHandler}>
-        <DateField onChange={inputChangeHandler("date")} value={date} />
+        <DateField
+          onChange={dateChangeHandler}
+          value={date}
+          error={dateHasError}
+          onBlur={dateBlurHandler}
+        />
         <MealTypeField
-          onChange={inputChangeHandler("mealType")}
+          onChange={mealTypeChangeHandler}
+          error={mealTypeHasError}
+          onBlur={mealTypeBlurHandler}
           value={mealType}
         />
         <CarbohydrateField
-          onChange={inputChangeHandler("carbo")}
+          onChange={carboChangeHandler}
+          error={carboHasError}
+          onBlur={carboBlurHandler}
           value={carbo}
         />
         <ProteinField
-          onChange={inputChangeHandler("protein")}
+          onChange={proteinChangeHandler}
+          error={proteinHasError}
+          onBlur={proteinBlurHandler}
           value={protein}
         />
-        <FatField onChange={inputChangeHandler("fat")} value={fat} />
+        <FatField
+          onChange={fatChangeHandler}
+          error={fatHasError}
+          onBlur={fatBlurHandler}
+          value={fat}
+        />
 
         <ButtonContainer>
           <SubmitButton type="submit" />

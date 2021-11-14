@@ -8,20 +8,24 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import { CellWifiSharp } from "@material-ui/icons";
+
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.info.main,
+    fontSize: 20,
+    fontWeight: 600,
   },
   body: {
-    fontSize: 14,
+    fontSize: 16,
+    fontWeight: 600,
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
     "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
+      backgroundColor: theme.palette.primary.light,
     },
   },
 }))(TableRow);
@@ -30,7 +34,8 @@ const useStyles = makeStyles({
   root: {
     // width: "100%",
     maxHeight: 440,
-    maxWidth: 700,
+    maxWidth: 800,
+    margin: "20px auto",
   },
 });
 const CustomTable = ({ rows, cells }) => {

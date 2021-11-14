@@ -6,7 +6,7 @@ import {
   MealTypesForm,
 } from "../input-fields/input-fields.component";
 
-export const DateField = ({ error, onChange, value }) => {
+export const DateField = ({ error, onChange, value, onBlur }) => {
   return (
     <InputField
       type="date"
@@ -16,10 +16,11 @@ export const DateField = ({ error, onChange, value }) => {
       onChange={onChange}
       error={error}
       value={value}
+      onBlur={onBlur}
     />
   );
 };
-export const CarbohydrateField = ({ error, onChange, value }) => {
+export const CarbohydrateField = ({ error, onChange, value, onBlur }) => {
   return (
     <InputField
       label="Carbohydrate"
@@ -30,6 +31,7 @@ export const CarbohydrateField = ({ error, onChange, value }) => {
       onChange={onChange}
       error={error}
       value={value}
+      onBlur={onBlur}
       InputProps={
         ({ inputProps: { min: 0 } },
         {
@@ -39,7 +41,7 @@ export const CarbohydrateField = ({ error, onChange, value }) => {
     />
   );
 };
-export const ProteinField = ({ error, onChange, value }) => {
+export const ProteinField = ({ error, onChange, value, onBlur }) => {
   return (
     <InputField
       label="Protein"
@@ -50,6 +52,7 @@ export const ProteinField = ({ error, onChange, value }) => {
       onChange={onChange}
       error={error}
       value={value}
+      onBlur={onBlur}
       InputProps={
         ({ inputProps: { min: 0 } },
         {
@@ -59,7 +62,7 @@ export const ProteinField = ({ error, onChange, value }) => {
     />
   );
 };
-export const FatField = ({ error, onChange, value }) => {
+export const FatField = ({ error, onChange, value, onBlur }) => {
   return (
     <InputField
       label="Fat"
@@ -70,6 +73,7 @@ export const FatField = ({ error, onChange, value }) => {
       onChange={onChange}
       error={error}
       value={value}
+      onBlur={onBlur}
       min="0"
       InputProps={
         ({ inputProps: { min: 0 } },
@@ -81,7 +85,7 @@ export const FatField = ({ error, onChange, value }) => {
   );
 };
 
-export const MealTypeField = ({ error, onChange, value }) => {
+export const MealTypeField = ({ error, onChange, value, onBlur }) => {
   return (
     <MealTypesForm
       id="meal-type"
@@ -91,6 +95,7 @@ export const MealTypeField = ({ error, onChange, value }) => {
       onChange={onChange}
       variant="filled"
       error={error}
+      onBlur={onBlur}
       color="secondary"
     />
   );

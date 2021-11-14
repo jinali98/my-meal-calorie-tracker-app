@@ -15,6 +15,7 @@ export const InputField = ({
   className,
   InputProps,
   min,
+  onBlur,
   ...otherProps
 }) => {
   return (
@@ -27,6 +28,7 @@ export const InputField = ({
       error={error}
       variant={variant}
       onChange={onChange}
+      onBlur={onBlur}
       value={value}
       InputProps={InputProps}
       min={min}
@@ -42,6 +44,7 @@ export const MealTypesForm = ({
   onChange,
   variant,
   color,
+  onBlur,
   className,
   ...otherProps
 }) => {
@@ -53,6 +56,7 @@ export const MealTypesForm = ({
       label={label}
       value={value}
       onChange={onChange}
+      onBlur={onBlur}
       variant={variant}
       color={color}
       {...otherProps}

@@ -51,3 +51,18 @@ export const ErrorMessage = ({ children }) => {
     </CustomTitle>
   );
 };
+export const ResultParagraph = ({ children }) => {
+  const classes = useFindReceipeTitle();
+  return (
+    <CustomTitle
+      className={classes.title}
+      color="primary"
+      align="center"
+      variant="h6"
+      component="p"
+      paragraph
+    >
+      {children}
+    </CustomTitle>
+  );
+};
