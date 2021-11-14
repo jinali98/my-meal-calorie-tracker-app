@@ -7,24 +7,33 @@ import {
 import SearchIcon from "@material-ui/icons/Search";
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 import { Form, useStylesForForm } from "./find-receipe-form.styles";
+import useTextFieldValidate from "../../effects/useTextFieldValidate";
 
 const FindReceipeForm = () => {
-  const [inputValues, setInputvalues] = useState({
-    receipeName: "",
-    mealType: "",
-  });
-
-  const valueOnChangeHandler = (props) => (event) => {
-    setInputvalues({ ...inputValues, [props]: event.target.value });
-  };
+  const {
+    value: receipeName,
+    reset: receipeNameReset,
+    hasError: receipeNameHasError,
+    valueChangeHandler: receipeNameChangeHandler,
+    isValid: receipeNameIsValid,
+    onBlur: receipeNameBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: mealType,
+    reset: mealTypeReset,
+    hasError: mealTypeHasError,
+    valueChangeHandler: mealTypeChangeHandler,
+    isValid: mealTypeIsValid,
+    onBlur: mealTypeBlurHandler,
+  } = useTextFieldValidate();
 
   const formOnSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(inputValues);
-    setInputvalues({
-      receipeName: "",
-      mealType: "",
-    });
+
+    if (!receipeNameIsValid || !mealTypeIsValid) return;
+
+    mealTypeReset();
+    receipeNameReset();
   };
 
   const classes = useStylesForForm();
@@ -39,8 +48,10 @@ const FindReceipeForm = () => {
         label="Receipe Name"
         variant="outlined"
         color="secondary"
-        value={inputValues.receipeName}
-        onChange={valueOnChangeHandler("receipeName")}
+        value={receipeName}
+        onChange={receipeNameChangeHandler}
+        error={receipeNameHasError}
+        onBlur={receipeNameBlurHandler}
       />
       <MealTypesForm
         className={classes.mealtypeField}
@@ -48,8 +59,10 @@ const FindReceipeForm = () => {
         label="Meal type"
         variant="outlined"
         color="secondary"
-        value={inputValues.mealType}
-        onChange={valueOnChangeHandler("mealType")}
+        value={mealType}
+        onChange={mealTypeChangeHandler}
+        error={mealTypeHasError}
+        onBlur={mealTypeBlurHandler}
       />
       <CustomIconButton
         ariaLabel="search"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 
 import { InputField } from "../input-fields/input-fields.component";
@@ -10,27 +10,34 @@ import {
 import { InputAdornment } from "@material-ui/core";
 import { fetchCalorieDataAsync } from "../../store/calorie-counter/calorie-counter.actions";
 import { connect } from "react-redux";
+import useTextFieldValidate from "../../effects/useTextFieldValidate";
 
 const FindCalorieAmountForm = ({ fetchCalorieData }) => {
-  const [inputValues, setInputvalues] = useState({
-    foodName: "",
-    amount: "1",
-  });
-
-  const valueOnChangeHandler = (props) => (event) => {
-    setInputvalues({ ...inputValues, [props]: event.target.value });
-  };
-
   const formOnSubmitHandler = (e) => {
     e.preventDefault();
-    const { foodName, amount } = inputValues;
-    console.log(inputValues);
+    if (!foodNameIsValid || !amountIsValid) return;
     fetchCalorieData(foodName, amount);
-    setInputvalues({
-      foodName: "",
-      amount: "1",
-    });
+    foodNameReset();
+    amountReset();
   };
+
+  const {
+    value: foodName,
+    reset: foodNameReset,
+    hasError: foodNameHasError,
+    valueChangeHandler: foodNameChangeHandler,
+    isValid: foodNameIsValid,
+    onBlur: foodNameBlurHandler,
+  } = useTextFieldValidate();
+  const {
+    value: amount,
+    reset: amountReset,
+    hasError: amountHasError,
+    valueChangeHandler: amountChangeHandler,
+    isValid: amountIsValid,
+    onBlur: amountBlurHandler,
+  } = useTextFieldValidate();
+
   const classes = useStylesForCalorieCounterForm();
 
   return (
@@ -43,8 +50,10 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
         label="Food Name"
         variant="outlined"
         color="secondary"
-        value={inputValues.foodName}
-        onChange={valueOnChangeHandler("foodName")}
+        value={foodName}
+        onChange={foodNameChangeHandler}
+        error={foodNameHasError}
+        onBlur={foodNameBlurHandler}
       />
       <InputField
         className={classes.amountField}
@@ -53,8 +62,10 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
         label="Quantity"
         variant="outlined"
         color="secondary"
-        value={inputValues.amount}
-        onChange={valueOnChangeHandler("amount")}
+        value={amount}
+        onChange={amountChangeHandler}
+        error={amountHasError}
+        onBlur={amountBlurHandler}
         InputProps={
           ({ inputProps: { min: 1 } },
           {

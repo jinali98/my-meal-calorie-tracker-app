@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.div`
   border-bottom: 3px solid ${color_3};
 `;
 export const QuantityWrapper = styled.div`
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-bottom: 10px;
 `;
@@ -35,5 +35,8 @@ export const useStyles = makeStyles({
   },
   badIcon: {
     color: red[700],
+  },
+  total: {
+    fontWeight: 600,
   },
 });

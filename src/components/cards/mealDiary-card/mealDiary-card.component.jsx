@@ -50,7 +50,7 @@ const MealDiaryCard = ({ card, removeCard }) => {
           ))}
         </QuantityWrapper>
         <ResultWrapper>
-          <CustomTitle variant="subtitle1">
+          <CustomTitle className={classess.total} variant="subtitle1">
             {`Total Calorie Intake is ${totalCal} kcl`}
           </CustomTitle>
           <List>
