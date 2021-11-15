@@ -11,3 +11,8 @@ export const removeMealCard = (item) => ({
   type: mealDiaryActionTypes.REMOVE_MEAL_CARD,
   payload: item,
 });
+
+export const updateMealCard = (item) => ({
+  type: mealDiaryActionTypes.UPDATE_MEAL_CARD,
+  payload: item,
+});

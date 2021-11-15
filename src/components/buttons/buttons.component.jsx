@@ -1,6 +1,8 @@
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+
 import CustomButton from "../custom-button/custom-button.component";
 export const DeleteButton = ({ onClick }) => {
   return (
@@ -23,6 +25,18 @@ export const UpdateButton = ({ onClick }) => {
       color="primary"
     >
       <EditIcon />
+    </CustomIconButton>
+  );
+};
+export const UpdatedButton = ({ onClick }) => {
+  return (
+    <CustomIconButton
+      onClick={onClick}
+      ariaLabel="edit"
+      variant="contained"
+      color="primary"
+    >
+      <CheckCircleOutlineIcon />
     </CustomIconButton>
   );
 };

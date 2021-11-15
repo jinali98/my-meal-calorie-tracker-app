@@ -1,5 +1,9 @@
 import { mealDiaryActionTypes } from "./mealdiary.types";
-import { addMealCardsUtil, removeMealCardUtil } from "./mealdiary.utils";
+import {
+  addMealCardsUtil,
+  removeMealCardUtil,
+  updateMealCardUtil,
+} from "./mealdiary.utils";
 
 const INITIAL_STATE = {
   modalOpen: false,
@@ -22,6 +26,11 @@ export const mealDiaryReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         mealCards: removeMealCardUtil(state.mealCards, action.payload),
+      };
+    case mealDiaryActionTypes.UPDATE_MEAL_CARD:
+      return {
+        ...state,
+        mealCards: updateMealCardUtil(state.mealCards, action.payload),
       };
 
     default:
