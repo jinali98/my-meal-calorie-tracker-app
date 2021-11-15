@@ -1,4 +1,5 @@
 import { receipeActionTypes } from "./receipes.types";
+import { formatReceipeData } from "./receipes.utils";
 
 const INITIAL_STATE = {
   fetchedReceipes: null,
@@ -20,7 +21,7 @@ export const receipeReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isStartedToFetch: false,
-        fetchedReceipes: action.payload,
+        fetchedReceipes: formatReceipeData(action.payload),
       };
     case receipeActionTypes.FAIL_FETCHING_RECEIPES:
       return {

@@ -2,21 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectFetchedReceipes } from "../../store/receipes/receipes.selectors";
-import EmptyMessage from "../empty-message/empty-message.component";
+import RecipeCard from "../cards/receipe-card/recipe.component";
+import { ReceipeContainer } from "./receipe-card-container.styles";
 const ReceipeCardContainer = ({ receipes }) => {
   return (
-    <div>
-      {receipes ? (
-        <div>
-          <img src="" alt="" />
-          <p>receipe.label</p>
-          <p>calories</p>
-          <p>total weight</p>
-        </div>
-      ) : (
-        <EmptyMessage>You Haven't found any Receipes yet!</EmptyMessage>
-      )}
-    </div>
+    <ReceipeContainer>
+      {receipes?.map((recipe) => (
+        <RecipeCard key={recipe.id} recipeData={recipe} />
+      ))}
+    </ReceipeContainer>
   );
 };
 

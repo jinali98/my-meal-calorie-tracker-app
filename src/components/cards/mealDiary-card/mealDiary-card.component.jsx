@@ -3,7 +3,6 @@ import {
   CardContent,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";

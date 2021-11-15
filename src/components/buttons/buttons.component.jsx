@@ -1,6 +1,7 @@
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+import CustomButton from "../custom-button/custom-button.component";
 export const DeleteButton = ({ onClick }) => {
   return (
     <CustomIconButton
@@ -23,5 +24,32 @@ export const UpdateButton = ({ onClick }) => {
     >
       <EditIcon />
     </CustomIconButton>
+  );
+};
+
+export const ViewButton = ({ onClick }) => {
+  return (
+    <CustomButton
+      onClick={onClick}
+      variant="outlined"
+      type="button"
+      size="medium"
+      color="secondary"
+    >
+      View
+    </CustomButton>
+  );
+};
+export const AddRemoveButton = ({ onClick, children }) => {
+  return (
+    <CustomButton
+      onClick={onClick}
+      variant="contained"
+      type="button"
+      size="medium"
+      color="secondary"
+    >
+      {children}
+    </CustomButton>
   );
 };

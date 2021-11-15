@@ -18,8 +18,6 @@ export const QuantityWrapper = styled.div`
 `;
 export const ResultWrapper = styled.div`
   text-align: center;
-
-  /* background-color: ${color_3}; */
   padding: 10px;
   border-radius: 8px;
 `;

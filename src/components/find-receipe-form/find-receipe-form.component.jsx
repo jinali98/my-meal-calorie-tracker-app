@@ -8,8 +8,10 @@ import SearchIcon from "@material-ui/icons/Search";
 import CustomIconButton from "../custom-icon-button/custom-icon-button.component";
 import { Form, useStylesForForm } from "./find-receipe-form.styles";
 import useTextFieldValidate from "../../effects/useTextFieldValidate";
+import { startFetchingReceipesAsync } from "../../store/receipes/receipes.actions";
+import { connect } from "react-redux";
 
-const FindReceipeForm = () => {
+const FindReceipeForm = ({ requestReceipes }) => {
   const {
     value: receipeName,
     reset: receipeNameReset,
@@ -18,6 +20,7 @@ const FindReceipeForm = () => {
     isValid: receipeNameIsValid,
     onBlur: receipeNameBlurHandler,
   } = useTextFieldValidate();
+
   const {
     value: mealType,
     reset: mealTypeReset,
@@ -31,6 +34,8 @@ const FindReceipeForm = () => {
     e.preventDefault();
 
     if (!receipeNameIsValid || !mealTypeIsValid) return;
+
+    requestReceipes(mealType, receipeName);
 
     mealTypeReset();
     receipeNameReset();
@@ -76,4 +81,9 @@ const FindReceipeForm = () => {
   );
 };
 
-export default FindReceipeForm;
+const mapDispatchToProps = (dispatch) => ({
+  requestReceipes: (mealType, receipeName) =>
+    dispatch(startFetchingReceipesAsync({ mealType, receipeName })),
+});
+
+export default connect(null, mapDispatchToProps)(FindReceipeForm);
