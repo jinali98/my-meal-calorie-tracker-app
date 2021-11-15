@@ -7,7 +7,7 @@ import FindCalorieAmountPage from "./pages/find-calorie-amount-page/find-calorie
 import FindReceipePage from "./pages/find-receipe-page/find-receipe-page.component";
 import HomePage from "./pages/home-page/home-page.component";
 import MealDiaryPage from "./pages/meal-diary-page/meal-diary-page.component";
-
+import RecipePage from "./pages/recipe-page/recipe-page.component";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const mainTheme = createTheme({
@@ -58,6 +58,7 @@ function App() {
           path="/find-calorie-amount"
           component={FindCalorieAmountPage}
         />
+        <Route exact path="/recipe/:recipeName" component={RecipePage} />
       </Switch>
     </ThemeProvider>
   );

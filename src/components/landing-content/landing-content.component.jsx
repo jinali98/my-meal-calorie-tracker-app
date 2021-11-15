@@ -17,7 +17,7 @@ const LandingContent = () => {
         <LandingHeading>Fitness starts with what you eat.</LandingHeading>
         <LandingPara>
           Take control of your goals. Track your daily calorie intake, find
-          healthy receipes,collect your favourite receipes, and learn about
+          healthy recipes,collect your favourite recipes, and learn about
           calorie content of various food items.
         </LandingPara>
         <CustomButton size="large" color="secondary" variant="contained">

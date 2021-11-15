@@ -4,13 +4,16 @@ import { createStructuredSelector } from "reselect";
 import { selectCookBookList } from "../../../store/cook-book/cook-book.selectors";
 import RecipeCard from "../../cards/receipe-card/recipe.component";
 import EmptyMessage from "../../empty-message/empty-message.component";
+import { CookBookWrapper } from "./cook-book-card-container.styles";
 const CookBookCardContainer = ({ mealCards }) => {
   console.log(mealCards);
   return (
     <div>
-      {mealCards?.map((card) => (
-        <RecipeCard key={card.id} recipeData={card} />
-      ))}
+      <CookBookWrapper>
+        {mealCards?.map((card) => (
+          <RecipeCard key={card.id} recipeData={card} />
+        ))}
+      </CookBookWrapper>
 
       <div>
         {mealCards.length === 0 && (

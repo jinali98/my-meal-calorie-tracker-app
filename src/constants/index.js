@@ -7,10 +7,10 @@ export const TOOL_TYPES = [
     url: "/meal-diary",
   },
   {
-    title: "Healthy Receipes",
-    value: "Find healthy receipes",
+    title: "Healthy Recipes",
+    value: "Find healthy recipes",
     imageUrl: "https://i.ibb.co/M7DKMZz/cooking.jpg",
-    button: "View Healthy Receipes",
+    button: "View Healthy Recipes",
     url: "/find-receipe",
   },
   {
@@ -22,7 +22,7 @@ export const TOOL_TYPES = [
   },
   {
     title: "Cook Book",
-    value: "Collect your favourite receipes",
+    value: "Collect your favourite recipes",
     imageUrl: "https://i.ibb.co/Jd0vrdH/tasting.jpg",
     button: "View Cook Book",
     url: "/cook-book",

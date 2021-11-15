@@ -1,6 +1,7 @@
 import { CardContent, Chip } from "@material-ui/core";
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { cuisineTypeList } from "../../../constants/cuisineType";
 import { addOrRemoveReceipe } from "../../../store/cook-book/cook-book.actions";
 import { AddRemoveButton, ViewButton } from "../../buttons/buttons.component";
@@ -14,14 +15,13 @@ import {
   useStyles,
 } from "./recipe.styles";
 
-const RecipeCard = ({ recipeData, toggle }) => {
+const RecipeCard = ({ recipeData, toggle, history }) => {
   const {
     name,
     calories,
     cuisineType,
     dietTypes,
     imageUrl,
-
     ingredientList,
     totalNutrients,
     receipeUrl,
@@ -53,7 +53,7 @@ const RecipeCard = ({ recipeData, toggle }) => {
           ))}
         </ChipGrp>
         <ButtonGrp>
-          <ViewButton />
+          <ViewButton onClick={() => history.push(`/recipe/${name}`)} />
           <AddRemoveButton onClick={() => toggle(recipeData)}>
             heart
           </AddRemoveButton>
@@ -66,4 +66,4 @@ const mapDispatchToProps = (dispatch) => ({
   toggle: (receipe) => dispatch(addOrRemoveReceipe(receipe)),
 });
 
-export default connect(null, mapDispatchToProps)(RecipeCard);
+export default withRouter(connect(null, mapDispatchToProps)(RecipeCard));
