@@ -22,6 +22,15 @@ export const ResultWrapper = styled.div`
   border-radius: 8px;
 `;
 
+export const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 80%;
+  margin: 1rem auto;
+`;
+
 export const useStyles = makeStyles({
   mealType: {
     padding: "2px 8px",

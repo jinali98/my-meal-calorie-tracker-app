@@ -16,6 +16,7 @@ import {
 import CustomCard from "../../custom-card/custom.card.component";
 import CustomTitle from "../../custom-title/custom-title.component";
 import {
+  FormWrapper,
   HeaderWrapper,
   QuantityWrapper,
   ResultWrapper,
@@ -103,7 +104,7 @@ const MealDiaryCard = ({ card, removeCard, editCard }) => {
           </ResultWrapper>
         </CardContent>
       ) : (
-        <>
+        <FormWrapper>
           <DateField
             onChange={inputChangeHandler("date")}
             value={values.date}
@@ -121,7 +122,7 @@ const MealDiaryCard = ({ card, removeCard, editCard }) => {
             value={values.protein}
           />
           <FatField onChange={inputChangeHandler("fat")} value={values.fat} />
-        </>
+        </FormWrapper>
       )}
 
       <CardActions>
