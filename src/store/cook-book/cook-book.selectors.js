@@ -6,3 +6,8 @@ export const selectCookBookList = createSelector(
   [selectCookBook],
   (cookBook) => cookBook.cookBookList
 );
+
+export const selectCookBookCount = createSelector(
+  [selectCookBookList],
+  (cookBookList) => cookBookList.length
+);

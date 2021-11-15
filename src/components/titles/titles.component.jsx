@@ -18,6 +18,21 @@ export const CalorieCounterTitle = () => {
     </CustomTitle>
   );
 };
+export const CookBookTitle = () => {
+  const classes = useFindReceipeTitle();
+  return (
+    <CustomTitle
+      className={classes.title}
+      color="primary"
+      align="center"
+      variant="h6"
+      component="h2"
+      paragraph
+    >
+      You can find all your favourite recipes here.
+    </CustomTitle>
+  );
+};
 
 export const FindReceipeTitle = () => {
   const classes = useFindReceipeTitle();
@@ -30,8 +45,8 @@ export const FindReceipeTitle = () => {
       component="h2"
       paragraph
     >
-      Search for any receipe you like! we have hundreds of healthy receipes just
-      for you. Select the meal type and search by receipe name and you are good
+      Search for any recipe you like! we have hundreds of healthy recipes just
+      for you. Select the meal type and search by recipe name and you are good
       to go!!!
     </CustomTitle>
   );

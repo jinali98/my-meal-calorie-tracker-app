@@ -10,3 +10,8 @@ export const selectMealCards = createSelector(
   [selectMealDiary],
   (mealDiary) => mealDiary.mealCards
 );
+
+export const selectMealCardCount = createSelector(
+  [selectMealCards],
+  (mealCards) => mealCards.length
+);
