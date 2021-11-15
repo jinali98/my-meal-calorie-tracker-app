@@ -1,3 +1,5 @@
+import { convertToArray } from "../../utils/convertToArray";
+
 export const formatReceipeData = (recipes) => {
   return recipes.map((recipe) => {
     const {
@@ -12,6 +14,14 @@ export const formatReceipeData = (recipes) => {
     } = recipe.recipe;
 
     const updatedCalories = Math.round(calories);
+    const nutrients = convertToArray(totalNutrients);
+    const updatedNutrients = nutrients.map((each) => {
+      return {
+        label: each.label,
+        quantity: Math.round(each.quantity),
+        unit: each.unit,
+      };
+    });
 
     return {
       id: label,
@@ -21,7 +31,7 @@ export const formatReceipeData = (recipes) => {
       dietTypes: dietLabels,
       imageUrl: image,
       ingredientList: ingredientLines,
-      totalNutrients,
+      totalNutrients: updatedNutrients,
       receipeUrl: url,
     };
   });

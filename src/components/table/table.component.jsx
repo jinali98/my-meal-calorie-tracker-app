@@ -7,7 +7,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import { CellWifiSharp } from "@material-ui/icons";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -38,7 +37,7 @@ const useStyles = makeStyles({
     margin: "20px auto",
   },
 });
-const CustomTable = ({ rows, cells }) => {
+const CustomTable = ({ rows, cells, labelName, quantityName, unitName }) => {
   const classes = useStyles();
   return (
     <TableContainer component={Paper} className={classes.root}>
@@ -54,14 +53,14 @@ const CustomTable = ({ rows, cells }) => {
         </TableHead>
         <TableBody>
           {rows?.map((row) => (
-            <StyledTableRow key={row.formatedLabel}>
+            <StyledTableRow key={row[labelName]}>
               <StyledTableCell component="th" scope="row">
-                {row.formatedLabel}
+                {row[labelName]}
               </StyledTableCell>
               <StyledTableCell align="center">
-                {row.formatedQuantity}
+                {row[quantityName]}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.unit}</StyledTableCell>
+              <StyledTableCell align="center">{row[unitName]}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

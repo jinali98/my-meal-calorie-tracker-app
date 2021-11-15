@@ -18,6 +18,21 @@ export const CalorieCounterTitle = () => {
     </CustomTitle>
   );
 };
+export const RecipeName = ({ children }) => {
+  const classes = useFindReceipeTitle();
+  return (
+    <CustomTitle
+      className={classes.title}
+      color="primary"
+      align="center"
+      variant="h6"
+      component="h2"
+      paragraph
+    >
+      {children}
+    </CustomTitle>
+  );
+};
 export const CookBookTitle = () => {
   const classes = useFindReceipeTitle();
   return (

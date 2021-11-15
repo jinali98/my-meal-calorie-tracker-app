@@ -7,7 +7,15 @@ import CustomTable from "../table/table.component";
 
 const CalorieTable = ({ data }) => {
   const cells = tableCells;
-  return <CustomTable cells={cells} rows={data.nutrients} />;
+  return (
+    <CustomTable
+      cells={cells}
+      rows={data.nutrients}
+      labelName="formatedLabel"
+      quantityName="formatedQuantity"
+      unitName="unit"
+    />
+  );
 };
 
 const mapStateToProps = createStructuredSelector({
