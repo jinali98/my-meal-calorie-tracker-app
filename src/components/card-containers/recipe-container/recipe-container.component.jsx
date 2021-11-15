@@ -29,8 +29,7 @@ const RecipeContainer = ({ recipe }) => {
     totalNutrients,
     receipeUrl,
   } = recipe;
-
-  console.log(convertToArray(totalNutrients));
+  console.log(dietTypesList);
   return (
     <RecipeWrapper>
       <RecipeName>{name}</RecipeName>
