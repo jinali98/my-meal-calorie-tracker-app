@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { cuisineTypeList } from "../../../constants/cuisineType";
 import { addOrRemoveReceipe } from "../../../store/cook-book/cook-book.actions";
+import { selectIsInTheCookBook } from "../../../store/cook-book/cook-book.selectors";
 import { AddRemoveButton, ViewButton } from "../../buttons/buttons.component";
 import CustomCard from "../../custom-card/custom.card.component";
 import CustomTitle from "../../custom-title/custom-title.component";
@@ -15,17 +16,8 @@ import {
   useStyles,
 } from "./recipe.styles";
 
-const RecipeCard = ({ recipeData, toggle, history }) => {
-  const {
-    name,
-    calories,
-    cuisineType,
-    dietTypes,
-    imageUrl,
-    ingredientList,
-    totalNutrients,
-    receipeUrl,
-  } = recipeData;
+const RecipeCard = ({ recipeData, toggle, history, isIntheCookBook }) => {
+  const { name, calories, cuisineType, imageUrl } = recipeData;
 
   const classess = useStyles();
 
@@ -44,6 +36,7 @@ const RecipeCard = ({ recipeData, toggle, history }) => {
         <ChipGrp>
           {cuisineType.map((each) => (
             <Chip
+              key={each}
               label={cuisineTypeList[each].type}
               color="primary"
               style={{
@@ -55,7 +48,7 @@ const RecipeCard = ({ recipeData, toggle, history }) => {
         <ButtonGrp>
           <ViewButton onClick={() => history.push(`/recipe/${name}`)} />
           <AddRemoveButton onClick={() => toggle(recipeData)}>
-            heart
+            {isIntheCookBook ? "Remove" : "Add"}
           </AddRemoveButton>
         </ButtonGrp>
       </CardContent>
@@ -66,4 +59,10 @@ const mapDispatchToProps = (dispatch) => ({
   toggle: (receipe) => dispatch(addOrRemoveReceipe(receipe)),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(RecipeCard));
+const mapStateToProps = (state, ownProps) => ({
+  isIntheCookBook: selectIsInTheCookBook(ownProps.recipeData.name)(state),
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(RecipeCard)
+);

@@ -29,3 +29,12 @@ export const selectSpecificRecipeCard = (recipeNameUrlParam) =>
       return recipe;
     }
   );
+export const selectIsInTheCookBook = (recipeName) =>
+  createSelector([selectCookBookList], (cookBookList) => {
+    const recipe = cookBookList?.find((item) => item.id === recipeName);
+    if (!recipe) {
+      return false;
+    }
+
+    return true;
+  });
