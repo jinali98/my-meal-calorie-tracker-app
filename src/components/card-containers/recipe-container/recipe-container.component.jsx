@@ -4,8 +4,9 @@ import { cuisineTypeList } from "../../../constants/cuisineType";
 import { dietTypesList } from "../../../constants/dietTypes";
 import { tableCells } from "../../../constants/tableCells";
 import { convertToArray } from "../../../utils/convertToArray";
+import { ViewRecipeButton } from "../../buttons/buttons.component";
 import CustomTable from "../../table/table.component";
-import { RecipeName } from "../../titles/titles.component";
+import { RecipeName, ResultParagraph } from "../../titles/titles.component";
 import {
   ContentWrapper,
   Image,
@@ -14,6 +15,7 @@ import {
   ListAndTableWrapper,
   MainContentWrapper,
   RecipeWrapper,
+  TableWrapper,
 } from "./recipe-container.styles";
 
 const RecipeContainer = ({ recipe }) => {
@@ -57,14 +59,16 @@ const RecipeContainer = ({ recipe }) => {
               />
             ))}
           </LabelWrapper>
-          <Chip label={`${calories}kcl`} color="primary" />
 
-          <a href={receipeUrl}>View Full recipe</a>
+          <Chip label={`${calories}kcl`} color="primary" />
+          <a href={receipeUrl}>
+            <ViewRecipeButton />
+          </a>
         </ContentWrapper>
       </MainContentWrapper>
       <ListAndTableWrapper>
-        <div>
-          <h2>Nutrients Information</h2>
+        <TableWrapper>
+          <ResultParagraph>Nutrients Information</ResultParagraph>
 
           <CustomTable
             rows={totalNutrients}
@@ -73,9 +77,9 @@ const RecipeContainer = ({ recipe }) => {
             quantityName="quantity"
             unitName="unit"
           />
-        </div>
+        </TableWrapper>
         <IngredientList>
-          <h2>Ingredients</h2>
+          <ResultParagraph>Ingredients</ResultParagraph>
           {ingredientList.map((item) => (
             <li>{item}</li>
           ))}

@@ -24,19 +24,19 @@ export const MainContentWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  width: 50%;
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
 `;
 
 export const LabelWrapper = styled.div`
   width: 300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  text-align: left;
+  text-align: center;
 `;
 export const IngredientList = styled.ul`
   width: 50%;
@@ -55,4 +55,8 @@ export const ListAndTableWrapper = styled.div`
   justify-content: space-evenly;
 
   gap: 3rem;
+`;
+
+export const TableWrapper = styled.div`
+  width: 50%;
 `;

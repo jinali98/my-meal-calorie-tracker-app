@@ -40,6 +40,19 @@ export const ViewButton = ({ onClick }) => {
     </CustomButton>
   );
 };
+export const ViewRecipeButton = ({ onClick }) => {
+  return (
+    <CustomButton
+      onClick={onClick}
+      variant="contained"
+      type="button"
+      size="medium"
+      color="secondary"
+    >
+      View Full Recipe
+    </CustomButton>
+  );
+};
 export const AddRemoveButton = ({ onClick, children }) => {
   return (
     <CustomButton
