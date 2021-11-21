@@ -1,47 +1,44 @@
-<!-- this is to get food nutrition amount -->
 
-https://api.edamam.com/api/food-database/v2/parser?app_id=2f60b8d7&app_key=0130641d530079875d39d91010599846&ingr=cake&nutrition-type=cooking
+# MyMeal – Calorie tracker and Healthy recipes app
 
-<!-- List of food objects, with each food object containing: kcal per 100gr, protein per 100 grams, carbohydrates per 100 grams, brand of the food, if the food is generic or brandid, a list of existing measures for the food, contents label of the food -->
+My Meal is a calorie tracker and Healthy recipe application
 
-////////////////////////////////////
-nutrition analysis api
-https://developer.edamam.com/edamam-docs-nutrition-api
 
-<!-- api to get cal level for a given food item with amount  -->
 
-<!-- find out cal amount in foods  %20 == of -->
-<!-- 70g of rice m-->
+## Stack
 
-https://api.edamam.com/api/nutrition-data?app_id=cd6e9866&app_key=808ab0b603f4226963a02046862ba736&nutrition-type=cooking&ingr=70g%20rice
+- React.js to build the front-end
+- Redux for state management 
+- React-router for routing 
+- Redux- reselect to memorize expensive calculations 
+- Redux- persist to store data in local storage
+- Material UI for forms, cards, buttons and Input Fields 
+- Styled Components to keep the concerns of styling and element architecture separated and make component more readable
 
-<!-- 70g of rice AND 80g of fish -->
-<!-- %2C = , -->
 
-https://api.edamam.com/api/nutrition-data?app_id=cd6e9866&app_key=808ab0b603f4226963a02046862ba736&nutrition-type=cooking&ingr=70g%20rice%2C80g%20fish
 
-///////////////////////////////////
-receipe serach api
-https://developer.edamam.com/edamam-docs-recipe-api
+## Complete MVP
+1.	CRUD operations on meal cards:
+Add and Update meal cards based on:
+- Meal type
+- Date
+- Nutrition Type
+- Delete meal cards
+2.	Complete Calorie intake Analysis 
+View total calorie intake based on the nutrition quantity (input)
+view feedback for each nutrition type
+view what nutrition type need to add or need to reduce 
 
-<!-- search receipes balanced and alchohol free receipes by meal type lunch, dinner, breakfast  -->
-<!-- add different colors to receipe cards according to the meal type -->
-<!-- by clicking each receipe card user can view the full receipe -->
-<!-- allow to add receipes to receipe book - store in the local storage -->
+3.	Search Recipes
+search for recipes based on Meal type
+add any search result recipe to the cook book collection
+view complete nutrition analysis and ingredients list for each recipe
 
-https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=7200a6f3&app_key=3324206cfcb6ba02b27f9729b3209459&diet=balanced&health=alcohol-free&mealType=Breakfast&imageSize=REGULAR
+4.	Store favorite recipes
+Add favorite recipes to the cook book
+Remove any added recipe from cook book
+view complete nutrition analysis and ingredients list for each recipe
 
-//
-store amount of fat, protein and carb and calulate the amount of calories
-users can find out cal in each food item per amount of grams
+5.	Calorie Tracker based on food name and quantity
+Search and view nutrition table for any food item 
 
-//home landing page
-https://www.myfitnesspal.com/
-https://www.wikihow.com/Calculate-Food-Calories
-
-navigation
-home
-store-cal == track your daily cal count
-cook-book == add your fav receipes to view later
-find -receipes == search over 1M food receipes in out database
-find-cal-amount == learn about calorie count and nutrition information per serving size.
