@@ -20,10 +20,10 @@ My Meal is a calorie tracker and Healthy recipe application
 ## Complete MVP
 1.	CRUD operations on meal cards:
 Add and Update meal cards based on:
-- Meal type
-- Date
-- Nutrition Type
-- Delete meal cards
+  - Meal type
+  - Date
+  - Nutrition Type
+  - Delete meal cards
 2.	Complete Calorie intake Analysis 
 View total calorie intake based on the nutrition quantity (input)
 view feedback for each nutrition type
