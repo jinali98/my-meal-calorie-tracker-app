@@ -3,7 +3,7 @@
 
 My Meal is a calorie tracker and Healthy recipe application
 
-
+<img src="https://user-images.githubusercontent.com/68109485/143993423-db454c2d-ee9b-4231-9598-c678dcea510b.jpg" alt="myMeal-app" border="0" width="50%">
 
 ## Stack
 
@@ -42,3 +42,12 @@ view complete nutrition analysis and ingredients list for each recipe
 5.	Calorie Tracker based on food name and quantity
 Search and view nutrition table for any food item 
 
+## Gallery
+
+<img src="https://user-images.githubusercontent.com/68109485/143994215-a5ba49b0-8603-4879-92b5-6de15073039b.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994220-b4c06625-c200-4e95-adc4-c231aa1f314f.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994223-5d5995d3-fb67-4740-a891-82b23a9a1130.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994225-13e402f7-e568-40f7-81cc-ed1e6eb7f6b1.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994227-58b1367f-fe79-4564-90ff-04554472b2bd.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994228-020a9406-4ed4-49f0-a7da-11c7ce2f4ad7.jpg" alt="myMeal-app" border="0" width="50%">
+<img src="https://user-images.githubusercontent.com/68109485/143994230-5e8ce4d8-aa91-469f-9370-98540e8ff69e.jpg" alt="myMeal-app" border="0" width="50%">
