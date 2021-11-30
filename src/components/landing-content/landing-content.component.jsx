@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import CustomButton from "../custom-button/custom-button.component";
 
 import {
@@ -10,7 +11,7 @@ import {
   LandingPara,
 } from "./landing-content.styles";
 
-const LandingContent = () => {
+const LandingContent = ({ history }) => {
   return (
     <LandingContentContainer>
       <ContentWrapper>
@@ -20,7 +21,12 @@ const LandingContent = () => {
           healthy recipes,collect your favourite recipes, and learn about
           calorie content of various food items.
         </LandingPara>
-        <CustomButton size="large" color="secondary" variant="contained">
+        <CustomButton
+          onClick={() => history.push("/meal-diary")}
+          size="large"
+          color="secondary"
+          variant="contained"
+        >
           Get Started
         </CustomButton>
       </ContentWrapper>
@@ -31,4 +37,4 @@ const LandingContent = () => {
   );
 };
 
-export default LandingContent;
+export default withRouter(LandingContent);

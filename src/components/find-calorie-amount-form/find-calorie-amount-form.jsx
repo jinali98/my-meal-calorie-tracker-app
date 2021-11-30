@@ -43,12 +43,10 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
   return (
     <CalorieCOunterForm onSubmit={formOnSubmitHandler}>
       <InputField
-        autoFocus
         className={classes.searchField}
         id="receipe-search"
         type="text"
         label="Food Name"
-        variant="outlined"
         color="secondary"
         value={foodName}
         onChange={foodNameChangeHandler}
@@ -60,7 +58,6 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
         id="quantity"
         type="number"
         label="Quantity"
-        variant="outlined"
         color="secondary"
         value={amount}
         onChange={amountChangeHandler}

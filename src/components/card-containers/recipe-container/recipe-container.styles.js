@@ -9,6 +9,13 @@ export const RecipeWrapper = styled.div`
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
+  /* @media (max-width: 360px) {
+    width: 100vw;
+  } */
 `;
 
 export const Image = styled.img`
@@ -21,6 +28,11 @@ export const MainContentWrapper = styled.div`
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 360px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -30,6 +42,10 @@ export const ContentWrapper = styled.div`
   gap: 1rem;
   justify-content: space-between;
   align-items: left;
+
+  @media (max-width: 360px) {
+    width: 320px;
+  }
 `;
 
 export const LabelWrapper = styled.div`
@@ -37,6 +53,14 @@ export const LabelWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 360px) {
+    width: 300px;
+  }
 `;
 export const IngredientList = styled.ul`
   width: 50%;
@@ -45,6 +69,10 @@ export const IngredientList = styled.ul`
 
   li {
     padding: 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 70%;
   }
 `;
 
@@ -55,8 +83,17 @@ export const ListAndTableWrapper = styled.div`
   justify-content: space-evenly;
 
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TableWrapper = styled.div`
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;

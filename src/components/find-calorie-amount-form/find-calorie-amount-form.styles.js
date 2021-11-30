@@ -5,6 +5,10 @@ import { Form } from "../find-receipe-form/find-receipe-form.styles";
 
 export const CalorieCOunterForm = styled(Form)`
   width: 40%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const useStylesForCalorieCounterForm = makeStyles({

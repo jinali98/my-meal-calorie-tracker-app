@@ -13,10 +13,20 @@ const NavLinks = ({ mealCardCount, cookBookCount }) => {
         <LinkItem to="/">MyMeal</LinkItem>
       </LogoContainer>
       <LinksContainer>
-        <Badge badgeContent={mealCardCount} color="secondary" showZero>
+        <Badge
+          overlap="circular"
+          badgeContent={mealCardCount}
+          color="secondary"
+          showZero
+        >
           <LinkItem to="/meal-diary">Meal Diary</LinkItem>
         </Badge>
-        <Badge badgeContent={cookBookCount} color="secondary" showZero>
+        <Badge
+          overlap="circular"
+          badgeContent={cookBookCount}
+          color="secondary"
+          showZero
+        >
           <LinkItem to="/cook-book">Cook Book</LinkItem>
         </Badge>
 

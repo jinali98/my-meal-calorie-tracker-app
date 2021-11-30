@@ -19,6 +19,11 @@ export const ImageContainer = styled.div`
   margin: auto;
   border-radius: 50%;
   border: 5px solid ${color_2};
+
+  @media (max-width: 360px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const DetailContainer = styled.div`

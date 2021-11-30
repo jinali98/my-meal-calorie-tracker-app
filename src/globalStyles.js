@@ -15,6 +15,8 @@ body{
     font-weight: 400;
     overflow-x: hidden;
     background-color: #f8f9fa;
+    
+    
 }
 html{
     scroll-behavior: smooth;
@@ -29,6 +31,7 @@ a {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 `;

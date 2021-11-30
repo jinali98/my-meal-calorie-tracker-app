@@ -12,7 +12,6 @@ export const DateField = ({ error, onChange, value, onBlur }) => {
       type="date"
       id="date"
       color="secondary"
-      variant="filled"
       onChange={onChange}
       error={error}
       value={value}
@@ -27,7 +26,6 @@ export const CarbohydrateField = ({ error, onChange, value, onBlur }) => {
       type="number"
       id="carbo"
       color="secondary"
-      variant="filled"
       onChange={onChange}
       error={error}
       value={value}
@@ -48,7 +46,6 @@ export const ProteinField = ({ error, onChange, value, onBlur }) => {
       type="number"
       id="protein"
       color="secondary"
-      variant="filled"
       onChange={onChange}
       error={error}
       value={value}
@@ -69,7 +66,6 @@ export const FatField = ({ error, onChange, value, onBlur }) => {
       type="number"
       id="fat"
       color="secondary"
-      variant="filled"
       onChange={onChange}
       error={error}
       value={value}
@@ -93,7 +89,6 @@ export const MealTypeField = ({ error, onChange, value, onBlur }) => {
       label="Meal Type"
       value={value}
       onChange={onChange}
-      variant="filled"
       error={error}
       onBlur={onBlur}
       color="secondary"

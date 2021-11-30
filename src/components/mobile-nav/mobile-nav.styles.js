@@ -13,4 +13,5 @@ export const NavContainer = styled(HeaderContainer)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
 `;

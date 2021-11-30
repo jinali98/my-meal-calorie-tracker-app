@@ -7,6 +7,13 @@ export const Form = styled.form`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  /* height: 100px; */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 export const useStylesForForm = makeStyles({

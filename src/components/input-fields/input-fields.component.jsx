@@ -8,7 +8,6 @@ export const InputField = ({
   search,
   type,
   error,
-  variant,
   onChange,
   value,
   color,
@@ -26,12 +25,13 @@ export const InputField = ({
       type={type}
       color={color}
       error={error}
-      variant={variant}
+      variant="filled"
       onChange={onChange}
       onBlur={onBlur}
       value={value}
       InputProps={InputProps}
       min={min}
+      InputLabelProps={{ style: { fontSize: 14, height: 20 } }}
       {...otherProps}
     />
   );
@@ -42,7 +42,6 @@ export const MealTypesForm = ({
   label,
   value,
   onChange,
-  variant,
   color,
   onBlur,
   className,
@@ -57,8 +56,9 @@ export const MealTypesForm = ({
       value={value}
       onChange={onChange}
       onBlur={onBlur}
-      variant={variant}
+      variant="filled"
       color={color}
+      InputLabelProps={{ style: { fontSize: 16, height: 20 } }}
       {...otherProps}
     >
       {convertToArray(mealTypes).map((option) => (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MealTypesForm,
   InputField,
@@ -46,12 +46,10 @@ const FindReceipeForm = ({ requestReceipes }) => {
   return (
     <Form onSubmit={formOnSubmitHandler}>
       <InputField
-        autoFocus
         className={classes.searchField}
         id="receipe-search"
         type="text"
         label="Receipe Name"
-        variant="outlined"
         color="secondary"
         value={receipeName}
         onChange={receipeNameChangeHandler}
@@ -62,7 +60,6 @@ const FindReceipeForm = ({ requestReceipes }) => {
         className={classes.mealtypeField}
         id="meal-type"
         label="Meal type"
-        variant="outlined"
         color="secondary"
         value={mealType}
         onChange={mealTypeChangeHandler}

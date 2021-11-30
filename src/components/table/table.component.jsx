@@ -14,6 +14,9 @@ const StyledTableCell = withStyles((theme) => ({
     color: theme.palette.info.main,
     fontSize: 20,
     fontWeight: 600,
+    [theme.breakpoints.up("sm")]: {
+      fontSize: 16,
+    },
   },
   body: {
     fontSize: 16,

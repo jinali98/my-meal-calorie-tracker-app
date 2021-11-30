@@ -9,15 +9,40 @@ export const LandingContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 90vh;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+  }
+  @media (max-width: 360px) {
+    width: 100vw;
+    height: max-content;
+    margin: 1rem auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const ContentWrapper = styled.div`
   width: 50%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 export const ImageContainer = styled.div`
   width: 50%;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 export const Image = styled(LandingImage)`
   width: 100%;
@@ -29,6 +54,10 @@ export const LandingHeading = styled.h1`
   font-weight: 900;
   color: ${color_1};
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
 `;
 export const LandingPara = styled.p`
   font-size: 20px;

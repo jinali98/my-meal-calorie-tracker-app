@@ -20,6 +20,7 @@ const navLinksMobile = css`
 
 const navLinks = css`
   width: 50%;
+  /* height: 80px; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -32,14 +33,17 @@ const mobileStyles = () => {
 };
 
 export const LogoContainer = styled.div`
-  width: 10%;
+  width: 15%;
+  /* height: 70px; */
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 70px;
+  }
 `;
 
 export const LinksContainer = styled.div`
-  /* width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around; */
   ${mobileStyles}
 `;
 
@@ -47,8 +51,16 @@ export const LinkItem = styled(Link)`
   font-size: 20px;
   font-weight: 400;
   color: ${color_3};
+  /* height: 70px; */
+  text-align: center;
+  margin-top: 10px;
 
   &:hover {
     color: ${color_4};
+  }
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 70px;
   }
 `;

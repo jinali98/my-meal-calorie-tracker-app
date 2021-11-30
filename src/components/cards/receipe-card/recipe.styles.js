@@ -12,12 +12,19 @@ export const ChipGrp = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 10px 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ButtonGrp = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const ReceipeContent = styled.div`
@@ -26,6 +33,11 @@ export const ReceipeContent = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: auto;
+  }
 `;
 
 export const useStyles = makeStyles({
