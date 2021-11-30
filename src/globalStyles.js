@@ -14,9 +14,9 @@ body{
     line-height: 1.5;
     font-weight: 400;
     overflow-x: hidden;
-    background-color: #f8f9fa;
-    
-    
+    background-color: #f8f9fa;    
+    margin: 0;
+    padding: 0;
 }
 html{
     scroll-behavior: smooth;
@@ -29,8 +29,7 @@ a {
 
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+   
     overflow-x: hidden;
 }
 
