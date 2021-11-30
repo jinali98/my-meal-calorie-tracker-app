@@ -13,9 +13,8 @@ export const ReceipePageContainer = styled.div`
 
 export const useFindReceipeTitle = makeStyles({
   title: {
-    width: "55%",
-    // margin: "20px auto",
-    margin: "auto",
+    width: "100&",
+    margin: "20px auto",
     // textAlign: "center",
   },
 });
