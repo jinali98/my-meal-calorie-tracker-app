@@ -16,6 +16,6 @@ export const useFindReceipeTitle = makeStyles({
     width: "55%",
     // margin: "20px auto",
     margin: "auto",
-    textAlign: "center",
+    // textAlign: "center",
   },
 });
